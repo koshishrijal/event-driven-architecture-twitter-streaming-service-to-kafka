@@ -8,10 +8,15 @@ spring:
           uri: https://github.com/koshishrijal/event-driven-microservice-arch-config-server.git
           default-label: master
           username: koshishrijal
-          password: koshish2018424
+          password: ENC(TeJ5dzSkJvBHMPa4xI8d7w3M8OQAjtQaHPPqLpqiThbjpmqhUEg1Z0YMzuQ9Xbv1==)
           clone-on-start: true
     fail-fast: true
   security:
       user:
         name: admin
-        password: admin
+        password: ENC(2jbZSar6eIj+ZSf2NfQd1AqUCCCZOgHPg6GpqNn1NOHF62q8XZDJ0tyuPsD/f0pt==)
+
+jasypt:
+  encryptor:
+    password: ${JASYPT_ENCRYPTOR_PASSWORD}
+

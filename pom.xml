@@ -17,6 +17,8 @@
         <module>elastic/elastic-model</module>
         <module>elastic/elastic-config</module>
         <module>elastic/elastic-index-client</module>
+        <module>elastic/elastic-query-client</module>
+        <module>common-util</module>
         <!--        //just for tests so no need for adding in module-->
 <!--        <module>playground</module>-->
     </modules>
@@ -62,6 +64,11 @@
             </dependency>
             <dependency>
                 <groupId>com.kosh</groupId>
+                <artifactId>elastic-query-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
                 <artifactId>common-config</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -93,6 +100,11 @@
             <dependency>
                 <groupId>com.kosh</groupId>
                 <artifactId>kafka-admin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>common-util</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

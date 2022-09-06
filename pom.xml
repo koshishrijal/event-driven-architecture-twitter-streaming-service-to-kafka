@@ -11,7 +11,13 @@
         <module>kafka/kafka-producer</module>
         <module>common-config</module>
         <module>config-server</module>
-<!--        //just for tests so no need for adding in module-->
+        <module>kafka/kafka-consumer</module>
+        <module>kafka-to-elastic-service</module>
+        <module>elastic</module>
+        <module>elastic/elastic-model</module>
+        <module>elastic/elastic-config</module>
+        <module>elastic/elastic-index-client</module>
+        <!--        //just for tests so no need for adding in module-->
 <!--        <module>playground</module>-->
     </modules>
     <parent>
@@ -39,6 +45,7 @@
         <spring-cloud.version>3.1.3</spring-cloud.version>
         <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
         <jasypt-spring-boot.version>3.0.3</jasypt-spring-boot.version>
+        <elastic.version>7.15.2</elastic.version>
     </properties>
     <repositories>
         <repository>
@@ -60,7 +67,27 @@
             </dependency>
             <dependency>
                 <groupId>com.kosh</groupId>
+                <artifactId>elastic-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>elastic-index-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>elastic-config</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
                 <artifactId>kafka-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>kafka-to-elastic-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -71,6 +98,11 @@
             <dependency>
                 <groupId>com.kosh</groupId>
                 <artifactId>kafka-producer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>kafka-consumer</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
@@ -114,6 +146,23 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>${elastic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>${elastic.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.retry</groupId>

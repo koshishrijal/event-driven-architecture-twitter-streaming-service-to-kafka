@@ -107,12 +107,14 @@ public class TwitterKafkaStreamRunner implements StreamRunner {
                 String line = null;
                 line = reader.readLine();
                 while (line != null) {
-                    log.info(line);
-                    log.info("Pushing data to kafka ::");
-                    log.debug("NEW TWEET:{}", line);
+
+
                     if(line.isEmpty()){
                         continue;
                     }
+                    log.info(line);
+                    log.info("Pushing data to kafka ::");
+                    log.debug("NEW TWEET:{}", line);
                     Map<String, Object> mapping = OBJECT_MAPPER.readValue(line, HashMap.class);
                     Map<String, Object> innerMap = (Map<String, Object>) mapping.get("data");
                     innerMap.remove("matching_rules");

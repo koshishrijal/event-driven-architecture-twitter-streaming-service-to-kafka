@@ -1,6 +1,7 @@
 package com.kosh.common.config;
 
 import com.kosh.eventDriven.config.RetryConfigData;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.retry.backoff.ExponentialBackOffPolicy;
@@ -12,6 +13,7 @@ public class RetryConfig {
 
     private final RetryConfigData retryConfigData;
 
+    @Autowired
     public RetryConfig(RetryConfigData retryConfigData) {
         this.retryConfigData = retryConfigData;
     }
@@ -20,6 +22,7 @@ public class RetryConfig {
     public RetryTemplate retryTemplate() {
         RetryTemplate retryTemplate = new RetryTemplate();
         ExponentialBackOffPolicy exponentialBackOffPolicy = new ExponentialBackOffPolicy();
+        System.out.println("RETRU CONFIG DATA IS:"+retryConfigData.toString());
         exponentialBackOffPolicy.setInitialInterval(retryConfigData.getInitialIntervalMs());
         exponentialBackOffPolicy.setMaxInterval(retryConfigData.getMaxIntervalMs());
         exponentialBackOffPolicy.setMultiplier(retryConfigData.getMultiplier());

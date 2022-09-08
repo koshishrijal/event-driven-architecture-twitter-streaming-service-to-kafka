@@ -19,6 +19,7 @@
         <module>elastic/elastic-index-client</module>
         <module>elastic/elastic-query-client</module>
         <module>common-util</module>
+        <module>elastic-query-service</module>
         <!--        //just for tests so no need for adding in module-->
 <!--        <module>playground</module>-->
     </modules>
@@ -105,6 +106,11 @@
             <dependency>
                 <groupId>com.kosh</groupId>
                 <artifactId>common-util</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>elastic-query-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

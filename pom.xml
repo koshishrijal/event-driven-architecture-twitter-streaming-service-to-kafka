@@ -49,6 +49,7 @@
         <spring-cloud-dependencies.version>2021.0.3</spring-cloud-dependencies.version>
         <jasypt-spring-boot.version>3.0.3</jasypt-spring-boot.version>
         <elastic.version>7.15.2</elastic.version>
+        <springdoc-openapi-ui.version>1.5.0</springdoc-openapi-ui.version>
     </properties>
     <repositories>
         <repository>
@@ -92,6 +93,11 @@
                 <groupId>com.kosh</groupId>
                 <artifactId>kafka-model</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-ui</artifactId>
+                <version>${springdoc-openapi-ui.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.kosh</groupId>

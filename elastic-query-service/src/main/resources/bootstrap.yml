@@ -1,4 +1,7 @@
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: "ant_path_matcher"
   application:
     name: elastic-query-service
   profiles:
@@ -12,3 +15,5 @@ spring:
 jasypt:
   encryptor:
     password: ${JASYPT_ENCRYPTOR_PASSWORD}
+
+

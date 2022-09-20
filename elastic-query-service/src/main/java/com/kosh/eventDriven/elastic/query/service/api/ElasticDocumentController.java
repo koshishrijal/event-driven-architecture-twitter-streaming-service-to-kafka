@@ -1,8 +1,8 @@
 package com.kosh.eventDriven.elastic.query.service.api;
 
 import com.kosh.eventDriven.elastic.query.service.business.ElasticQueryService;
-import com.kosh.eventDriven.elastic.query.service.model.ElasticQueryServiceRequestModel;
-import com.kosh.eventDriven.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.kosh.eventDriven.elastic.query.service.common.model.ElasticQueryServiceRequestModel;
+import com.kosh.eventDriven.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import com.kosh.eventDriven.elastic.query.service.model.ElasticQueryServiceResponseModelV2;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,6 +25,8 @@ import java.util.List;
 public class ElasticDocumentController {
 
     private final ElasticQueryService elasticQueryService;
+    @Value("${server.port}")
+    private String port;
 
     public ElasticDocumentController(ElasticQueryService queryService) {
         this.elasticQueryService = queryService;
@@ -83,7 +86,7 @@ public class ElasticDocumentController {
     getDocumentByText(@RequestBody @Valid ElasticQueryServiceRequestModel elasticQueryServiceRequestModel) {
         List<ElasticQueryServiceResponseModel> response =
                 elasticQueryService.getDocumentByText(elasticQueryServiceRequestModel.getText());
-        log.info("Elasticsearch returned {} of documents", response.size());
+        log.info("Elasticsearch returned {} of documents on port:{}", response.size(),port);
         return ResponseEntity.ok(response);
     }
 

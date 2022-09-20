@@ -57,6 +57,7 @@
                     <image>
                         <name>${project.groupId}/config.server:${project.version}</name>
                     </image>
+                    <pullPolicy>IF_NOT_PRESENT</pullPolicy>
                 </configuration>
                 <executions>
                     <execution>

@@ -2,7 +2,7 @@ package com.kosh.eventDriven.elastic.query.service.business.impl;
 import  com.kosh.eventDriven.elastic.query.client.service.ElasticQueryClient;
 import com.kosh.eventDriven.elastic.model.index.impl.TwitterIndexModel;
 import com.kosh.eventDriven.elastic.query.service.business.ElasticQueryService;
-import com.kosh.eventDriven.elastic.query.service.model.ElasticQueryServiceResponseModel;
+import com.kosh.eventDriven.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 import com.kosh.eventDriven.elastic.query.service.model.assembler.ElasticQueryServiceResponseModelAssembler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

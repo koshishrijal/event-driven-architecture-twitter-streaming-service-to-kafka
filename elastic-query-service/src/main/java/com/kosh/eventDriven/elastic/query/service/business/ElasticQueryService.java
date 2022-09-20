@@ -1,7 +1,8 @@
 package com.kosh.eventDriven.elastic.query.service.business;
 
 
-import com.kosh.eventDriven.elastic.query.service.model.ElasticQueryServiceResponseModel;
+
+import com.kosh.eventDriven.elastic.query.service.common.model.ElasticQueryServiceResponseModel;
 
 import java.util.List;
 

@@ -91,6 +91,7 @@
                     <image>
                         <name>${project.groupId}/twitter.to.kafka.service:${project.version}</name>
                     </image>
+                    <pullPolicy>IF_NOT_PRESENT</pullPolicy>
                 </configuration>
                 <executions>
                     <execution>

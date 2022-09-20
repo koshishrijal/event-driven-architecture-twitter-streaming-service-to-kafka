@@ -20,6 +20,9 @@
         <module>elastic/elastic-query-client</module>
         <module>common-util</module>
         <module>elastic-query-service</module>
+        <module>elastic-query-web-client</module>
+        <module>elastic-query-service-common</module>
+        <module>elastic-query-web-client-common</module>
         <!--        //just for tests so no need for adding in module-->
 <!--        <module>playground</module>-->
     </modules>
@@ -127,6 +130,21 @@
             <dependency>
                 <groupId>com.kosh</groupId>
                 <artifactId>kafka-consumer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>elastic-query-service-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>elastic-query-web-client-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kosh</groupId>
+                <artifactId>elastic-query-web-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

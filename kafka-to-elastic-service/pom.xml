@@ -87,6 +87,7 @@
                     <image>
                         <name>${project.groupId}/kafka.to.elastic.service:${project.version}</name>
                     </image>
+                    <pullPolicy>IF_NOT_PRESENT</pullPolicy>
                 </configuration>
                 <executions>
                     <execution>
